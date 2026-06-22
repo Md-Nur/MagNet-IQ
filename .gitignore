@@ -25,3 +25,5 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.coverage
+*.pkl
+models/

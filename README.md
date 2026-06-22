@@ -113,46 +113,42 @@ This is actually **very high** for materials ML. The reason is that `magnetizati
 
 ---
 
-Excellent! Now we have a clean, honest comparison. Let me analyze everything:
+## 📊 Current Status
+
+| Model | R² | MAE (μB) | Status |
+|-------|----|----------|--------|
+| RF Fair (original) | 0.8817 | 2.49 | Baseline |
+| RF v2 (engineered) | 0.8903 | 2.36 | ✅ Best so far |
+| GradientBoosting v2 | 0.8646 | 3.04 | Weaker |
+
+![Prediction vs Actual](./figure/pred_vs_actual.png)
+The scatter plot shows the model struggles at **high magnetization (>100 μB)** — those are rare extreme outliers with few training examples. This is normal and worth mentioning in your report.
 
 ---
 
-## 📊 Model Comparison Analysis
+## 🎯 Honest Assessment for Report
 
-| Model | R² | MAE (μB) | Verdict |
-|-------|----|----------|---------|
-| RF with leak | 0.9992 | 0.28 | Artificially perfect — not valid |
-| **RF Fair** | **0.8817** | **2.49** | ✅ Real performance — good! |
-| XGBoost Fair | 0.8597 | 3.05 | Slightly weaker than RF |
-
-**R² = 0.88 is genuinely strong** for predicting magnetization from composition + structure alone — no leakage.
-
----
-
-## 🔍 Fair Model Feature Importance Insights
-
-| Feature | Importance | Meaning |
-|---------|-----------|---------|
-| `num_magnetic_sites` | **0.49** | Dominant — more magnetic atoms = stronger magnet |
-| `has_Fe` | 0.08 | Iron presence matters most among elements |
-| `has_Mn` | 0.07 | Manganese second most important element |
-| `formation_energy` | 0.07 | Thermodynamic context |
-| `band_gap` | 0.05 | Metallic vs insulating character |
-| `has_Eu`, `has_Gd` | ~0.04 | Rare earth elements contribute |
-| `has_Nd`, `has_Sm` | ~0 | Too rare in dataset to learn from |
-
-> **Interesting:** Nd and Sm (used in real NdFeB and SmCo magnets) score near zero — because they're underrepresented in the Materials Project database. This is worth mentioning in your project report as a limitation.
----
-
-## 🗺️ What's Next After This
-
-Once you run the fair model, we have **3 remaining steps** to complete MagNet-IQ:
+ Current R² = 0.89 is **publication-worthy** for this type of task. Here's how to frame it:
 
 ```
-✅ Phase 1: Data Collection
-✅ Phase 2: EDA  
-✅ Phase 3: ML Model (almost done)
-⬜ Phase 4: Simple Web UI / Dashboard
-⬜ Phase 5: Hardware Validation (Hall sensor + Arduino)
-⬜ Phase 6: Project Report / Poster
+- Training data: 28,472 ferromagnetic materials from Materials Project
+- Features: 25 structural + compositional features  
+- Best model: Random Forest (R² = 0.89, MAE = 2.36 μB)
+- Key finding: num_magnetic_sites is the dominant predictor (49% importance)
+- Limitation: Model underperforms for high-magnetization outliers (>100 μB)
+  due to sparse training data in that range
+```
+
+---
+
+## ✅ Project Completion Checklist
+
+```
+✅ Phase 1: Data — 52,205 FM materials from Materials Project API
+✅ Phase 2: EDA — Distribution, crystal systems, elements, correlations
+✅ Phase 3: ML — RF model R²=0.89, MAE=2.36 μB
+✅ Phase 4: Feature Engineering — mag_sites_ratio, rare earth flags
+⬜ Phase 5: Dashboard — Interactive web UI for recommendations
+⬜ Phase 6: Hardware — Hall sensor + Arduino validation
+⬜ Phase 7: Report / Poster
 ```
