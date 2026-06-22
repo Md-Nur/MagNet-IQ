@@ -113,54 +113,35 @@ This is actually **very high** for materials ML. The reason is that `magnetizati
 
 ---
 
-
-
-```python
-
-
-```
+Excellent! Now we have a clean, honest comparison. Let me analyze everything:
 
 ---
 
-## 🧪 Add XGBoost for Comparison
+## 📊 Model Comparison Analysis
 
-```python
-from xgboost import XGBRegressor
+| Model | R² | MAE (μB) | Verdict |
+|-------|----|----------|---------|
+| RF with leak | 0.9992 | 0.28 | Artificially perfect — not valid |
+| **RF Fair** | **0.8817** | **2.49** | ✅ Real performance — good! |
+| XGBoost Fair | 0.8597 | 3.05 | Slightly weaker than RF |
 
-xgb = XGBRegressor(n_estimators=300, learning_rate=0.05, max_depth=6,
-                   random_state=42, n_jobs=-1, verbosity=0)
-xgb.fit(X_train, y_train)
-
-y_pred_xgb = xgb.predict(X_test)
-print(f"XGBoost     → R²: {r2_score(y_test, y_pred_xgb):.4f} | MAE: {mean_absolute_error(y_test, y_pred_xgb):.4f}")
-```
+**R² = 0.88 is genuinely strong** for predicting magnetization from composition + structure alone — no leakage.
 
 ---
 
-## 📋 Model Comparison Table (run this after both models)
+## 🔍 Fair Model Feature Importance Insights
 
-```python
-models = {
-    "Random Forest (with leak)": rf,
-    "Random Forest (fair)": rf_fair,
-    "XGBoost (fair)": xgb
-}
+| Feature | Importance | Meaning |
+|---------|-----------|---------|
+| `num_magnetic_sites` | **0.49** | Dominant — more magnetic atoms = stronger magnet |
+| `has_Fe` | 0.08 | Iron presence matters most among elements |
+| `has_Mn` | 0.07 | Manganese second most important element |
+| `formation_energy` | 0.07 | Thermodynamic context |
+| `band_gap` | 0.05 | Metallic vs insulating character |
+| `has_Eu`, `has_Gd` | ~0.04 | Rare earth elements contribute |
+| `has_Nd`, `has_Sm` | ~0 | Too rare in dataset to learn from |
 
-print(f"{'Model':<35} {'R²':>8} {'MAE (log)':>12} {'MAE (μB)':>12}")
-print("-" * 70)
-
-for name, model in models.items():
-    if "leak" in name:
-        Xeval = df[feature_cols][X_test.index]
-    else:
-        Xeval = X_test
-    pred = model.predict(Xeval)
-    r2  = r2_score(y_test, pred)
-    mae = mean_absolute_error(y_test, pred)
-    mae_actual = mean_absolute_error(np.expm1(y_test), np.expm1(pred))
-    print(f"{name:<35} {r2:>8.4f} {mae:>12.4f} {mae_actual:>12.2f}")
-```
-
+> **Interesting:** Nd and Sm (used in real NdFeB and SmCo magnets) score near zero — because they're underrepresented in the Materials Project database. This is worth mentioning in your project report as a limitation.
 ---
 
 ## 🗺️ What's Next After This
@@ -175,5 +156,3 @@ Once you run the fair model, we have **3 remaining steps** to complete MagNet-IQ
 ⬜ Phase 5: Hardware Validation (Hall sensor + Arduino)
 ⬜ Phase 6: Project Report / Poster
 ```
-
-Run the fair model and share the new R² — then we'll build the **interactive dashboard** where someone can input element preferences and get magnet recommendations!
