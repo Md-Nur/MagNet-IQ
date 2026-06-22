@@ -144,11 +144,11 @@ The scatter plot shows the model struggles at **high magnetization (>100 μB)** 
 ## ✅ Project Completion Checklist
 
 ```
-✅ Phase 1: Data — 52,205 FM materials from Materials Project API
-✅ Phase 2: EDA — Distribution, crystal systems, elements, correlations
-✅ Phase 3: ML — RF model R²=0.89, MAE=2.36 μB
-✅ Phase 4: Feature Engineering — mag_sites_ratio, rare earth flags
-⬜ Phase 5: Dashboard — Interactive web UI for recommendations
-⬜ Phase 6: Hardware — Hall sensor + Arduino validation
+✅ Phase 1: Data — 52,205 FM materials
+✅ Phase 2: EDA — 5 visualization plots
+✅ Phase 3: ML  — RF v2, R²=0.89, MAE=2.36 μB
+✅ Phase 4: Feature Engineering — 25 features
+✅ Phase 5: Dashboard — Interactive HTML
+⬜ Phase 6: Hardware — Hall sensor + Arduino
 ⬜ Phase 7: Report / Poster
 ```
