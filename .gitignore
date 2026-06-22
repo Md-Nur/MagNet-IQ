@@ -25,5 +25,4 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.coverage
-*.pkl
-models/
+models/magnet_model_rf_v2.pkl
