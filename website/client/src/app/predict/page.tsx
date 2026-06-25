@@ -113,10 +113,10 @@ export default function PredictPage() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pt-28 pb-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
       {/* Title */}
-      <div className="mb-10 text-center md:text-left">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <div className="mb-8 text-center md:text-left">
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
           Magnetization <span className="gradient-text">Predictor</span>
         </h1>
         <p className="mt-2 text-sm text-magnet-muted">
@@ -126,15 +126,15 @@ export default function PredictPage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Left Column: Form */}
-        <div className="glass rounded-2xl p-6 md:p-8 lg:col-span-7">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Brain className="h-5 w-5 text-magnet-blue" /> Material Specifications
+        <div className="glass rounded-2xl p-5 sm:p-6 md:p-8 lg:col-span-7">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+              <Brain className="h-5 w-5 text-magnet-blue flex-shrink-0" /> Material Specifications
             </h2>
             <button
               onClick={prefillExample}
               type="button"
-              className="text-xs font-semibold text-magnet-purple hover:text-magnet-blue flex items-center gap-1 transition-colors"
+              className="text-xs font-semibold text-magnet-purple hover:text-magnet-blue flex items-center gap-1.5 transition-colors self-start sm:self-auto flex-shrink-0"
             >
               <Sparkles className="h-4 w-4" /> Try Example (Gd₂Fe₁₄C)
             </button>
@@ -173,7 +173,7 @@ export default function PredictPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-3">
               <div>
                 <label className="block text-xs font-semibold text-magnet-muted uppercase mb-2">
                   Num Elements
@@ -220,7 +220,7 @@ export default function PredictPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-3">
               <div>
                 <label className="block text-xs font-semibold text-magnet-muted uppercase mb-2">
                   Volume (Å³)
@@ -267,7 +267,7 @@ export default function PredictPage() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-3">
               <div>
                 <label className="block text-xs font-semibold text-magnet-muted uppercase mb-2">
                   Formation E (eV/atom)
@@ -349,7 +349,7 @@ export default function PredictPage() {
         {/* Right Column: Prediction Results */}
         <div className="lg:col-span-5 flex flex-col justify-start">
           {loading ? (
-            <div className="glass rounded-2xl p-8 flex flex-col items-center justify-center h-full min-h-[300px]">
+            <div className="glass rounded-2xl p-8 flex flex-col items-center justify-center h-full min-h-[200px] sm:min-h-[300px]">
               <LoadingSpinner message={warmingMessage ? 'Hugging Face Space is warming up (~30s)...' : 'Evaluating properties...'} />
             </div>
           ) : error ? (
@@ -432,7 +432,7 @@ export default function PredictPage() {
               </div>
             </div>
           ) : (
-            <div className="glass rounded-2xl p-8 flex flex-col items-center justify-center h-full min-h-[300px] border border-dashed border-magnet-border/40 text-center">
+            <div className="glass rounded-2xl p-8 flex flex-col items-center justify-center h-full min-h-[200px] sm:min-h-[300px] border border-dashed border-magnet-border/40 text-center">
               <Brain className="h-10 w-10 text-magnet-muted mb-3" />
               <h3 className="text-white font-bold">Awaiting Input</h3>
               <p className="text-xs text-magnet-muted max-w-[240px] mt-1">

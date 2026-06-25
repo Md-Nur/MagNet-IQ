@@ -82,10 +82,10 @@ export default function RecommendPage() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pt-28 pb-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
       {/* Title */}
-      <div className="mb-10 text-center md:text-left">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <div className="mb-8 text-center md:text-left">
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
           Material <span className="gradient-text">Discovery & Recommender</span>
         </h1>
         <p className="mt-2 text-sm text-magnet-muted">
@@ -94,11 +94,11 @@ export default function RecommendPage() {
       </div>
 
       {/* Main Layout Grid */}
-      <div className="grid gap-8 lg:grid-cols-12">
+      <div className="grid gap-6 lg:gap-8 lg:grid-cols-12">
         {/* Left Filters Panel */}
-        <div className="glass rounded-2xl p-6 lg:col-span-4 space-y-6">
-          <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <Filter className="h-5 w-5 text-magnet-blue" /> Screening Filters
+        <div className="glass rounded-2xl p-5 lg:col-span-4 space-y-5">
+          <h2 className="text-base font-bold text-white flex items-center gap-2">
+            <Filter className="h-5 w-5 text-magnet-blue flex-shrink-0" /> Screening Filters
           </h2>
 
           {/* Element Pills */}
@@ -150,7 +150,7 @@ export default function RecommendPage() {
               </select>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block text-xs font-semibold text-magnet-muted uppercase mb-1">
                   Sort By
@@ -160,7 +160,7 @@ export default function RecommendPage() {
                   onChange={(e) => setSortParam(e.target.value)}
                   className="input-dark"
                 >
-                  <option value="score">Magnet Score</option>
+                  <option value="score">Score</option>
                   <option value="magnetization">Magnetization</option>
                   <option value="stability">Stability</option>
                 </select>
@@ -168,16 +168,16 @@ export default function RecommendPage() {
 
               <div>
                 <label className="block text-xs font-semibold text-magnet-muted uppercase mb-1">
-                  Results Limit
+                  Limit
                 </label>
                 <select
                   value={String(limit)}
                   onChange={(e) => setLimit(Number(e.target.value))}
                   className="input-dark"
                 >
-                  <option value="10">10 Materials</option>
-                  <option value="20">20 Materials</option>
-                  <option value="50">50 Materials</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
                 </select>
               </div>
             </div>
@@ -190,16 +190,16 @@ export default function RecommendPage() {
                   : 'border-magnet-border/60 bg-magnet-surface/20'
               }`}
             >
-              <div className="flex items-center justify-between">
-                <div>
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
                   <span className="block text-sm font-bold text-white flex items-center gap-1.5">
-                    <Sparkles className="h-4 w-4 text-magnet-green" /> Rare-Earth-Free Only
+                    <Sparkles className="h-4 w-4 text-magnet-green flex-shrink-0" /> Rare-Earth-Free Only
                   </span>
                   <span className="block text-[11px] text-magnet-muted mt-0.5 leading-tight">
                     Exclude Nd, Sm, Gd, Eu, Dy, Pr, Tb, La, Ce
                   </span>
                 </div>
-                <label className="toggle-switch">
+                <label className="toggle-switch flex-shrink-0">
                   <input
                     type="checkbox"
                     checked={rareEarthFree}
@@ -221,13 +221,13 @@ export default function RecommendPage() {
         {/* Right Results Panel */}
         <div className="lg:col-span-8 flex flex-col">
           {loading ? (
-            <div className="glass rounded-2xl p-12 flex justify-center items-center flex-1 min-h-[400px]">
+            <div className="glass rounded-2xl p-12 flex justify-center items-center flex-1 min-h-[300px]">
               <LoadingSpinner message="Querying dataset candidates..." />
             </div>
           ) : results.length > 0 ? (
             <div className="glass rounded-2xl overflow-hidden flex flex-col flex-1">
               {/* Summary Header */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 border-b border-magnet-border/30 bg-magnet-surface/30">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 sm:p-5 border-b border-magnet-border/30 bg-magnet-surface/30">
                 <div>
                   <p className="text-sm font-semibold text-white">
                     Showing <span className="text-magnet-blue">{results.length}</span> materials
@@ -244,8 +244,8 @@ export default function RecommendPage() {
                 </button>
               </div>
 
-              {/* Table wrapper */}
-              <div className="overflow-x-auto">
+              {/* Desktop Table (hidden on mobile) */}
+              <div className="hidden sm:block overflow-x-auto">
                 <table className="table-dark">
                   <thead>
                     <tr>
@@ -285,9 +285,54 @@ export default function RecommendPage() {
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile Card View (visible on mobile only) */}
+              <div className="sm:hidden divide-y divide-magnet-border/20">
+                {results.map((mat) => (
+                  <div key={mat.rank} className="p-4 space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="font-mono text-xs text-magnet-blue font-semibold flex-shrink-0">#{mat.rank}</span>
+                        <span className="font-mono font-bold text-white truncate">{mat.formula}</span>
+                      </div>
+                      {mat.has_rare_earth ? (
+                        <span className="text-[10px] font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded border border-red-400/20 flex-shrink-0">
+                          Contains RE
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-bold text-magnet-green bg-magnet-green/10 px-2 py-0.5 rounded border border-magnet-green/20 flex-shrink-0">
+                          ✓ RE-Free
+                        </span>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                      <div className="flex justify-between">
+                        <span className="text-magnet-muted">Score</span>
+                        <span className="font-mono font-semibold text-magnet-blue">{mat.magnet_score.toFixed(1)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-magnet-muted">Mag.</span>
+                        <span className="font-mono">{mat.total_magnetization.toFixed(1)} μB</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-magnet-muted">Crystal</span>
+                        <span className="text-magnet-text/90">{mat.crystal_system}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-magnet-muted">Stability</span>
+                        <span className="font-mono">{mat.energy_above_hull.toFixed(3)}</span>
+                      </div>
+                      <div className="flex justify-between col-span-2">
+                        <span className="text-magnet-muted">Density</span>
+                        <span className="font-mono">{mat.density.toFixed(2)} g/cm³</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : (
-            <div className="glass rounded-2xl p-12 flex flex-col justify-center items-center text-center flex-1 min-h-[400px] border border-dashed border-magnet-border/40">
+            <div className="glass rounded-2xl p-10 sm:p-12 flex flex-col justify-center items-center text-center flex-1 min-h-[300px] border border-dashed border-magnet-border/40">
               <Zap className="h-12 w-12 text-magnet-muted mb-4" />
               <h3 className="text-white font-bold text-lg">
                 {hasSearched ? 'No Materials Found' : 'Discovery Dashboard'}

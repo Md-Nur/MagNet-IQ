@@ -119,10 +119,10 @@ export default function ExplorePage() {
     .slice(0, 20)
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pt-28 pb-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="mb-10 text-center md:text-left">
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
           Dataset & Model <span className="gradient-text">Insights</span>
         </h1>
         <p className="mt-2 text-sm text-magnet-muted">
@@ -142,7 +142,7 @@ export default function ExplorePage() {
           <h2 className="text-base font-bold text-white mb-4">
             Crystal System Distribution
           </h2>
-          <div className="h-64">
+          <div className="h-48 sm:h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={crystalData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -163,7 +163,7 @@ export default function ExplorePage() {
           <h2 className="text-base font-bold text-white mb-4">
             Top Elements Frequency
           </h2>
-          <div className="h-64">
+          <div className="h-48 sm:h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={elementData} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} />
@@ -241,12 +241,12 @@ export default function ExplorePage() {
           <h2 className="text-base font-bold text-white mb-4">
             Feature Importance (Relative Weight)
           </h2>
-          <div className="h-64">
+          <div className="h-48 sm:h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={FEATURE_IMPORTANCE} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} />
                 <XAxis type="number" stroke="#64748b" style={{ fontSize: 11 }} />
-                <YAxis dataKey="name" type="category" stroke="#64748b" style={{ fontSize: 10 }} width={120} />
+                <YAxis dataKey="name" type="category" stroke="#64748b" style={{ fontSize: 10 }} width={80} />
                 <Tooltip
                   contentStyle={{ backgroundColor: '#111827', borderColor: '#1e3a5f', borderRadius: 8 }}
                   labelStyle={{ color: '#ffffff', fontWeight: 'bold' }}

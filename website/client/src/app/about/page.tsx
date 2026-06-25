@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 pt-28 pb-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 pt-24 pb-16 sm:px-6 lg:px-8">
       {/* Title */}
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
           About <span className="gradient-text">MagNet-IQ</span>
         </h1>
         <p className="mt-3 text-base text-magnet-muted">
