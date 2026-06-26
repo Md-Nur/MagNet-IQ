@@ -183,49 +183,49 @@ export default function ExplorePage() {
       {/* Grid: Comparison table & Feature Importance */}
       <div className="grid gap-8 md:grid-cols-2">
         {/* Chart 3: Model comparison table */}
-        <div className="glass rounded-2xl p-6 flex flex-col justify-between">
+        <div className="glass rounded-2xl p-4 sm:p-6 flex flex-col justify-between">
           <div>
             <h2 className="text-base font-bold text-white mb-4">
               Model Performance Comparison
             </h2>
-            <div className="overflow-x-auto">
-              <table className="table-dark">
+            <div className="overflow-x-auto -mx-1">
+              <table className="table-dark-mobile w-full border-collapse text-xs sm:text-[13px]">
                 <thead>
                   <tr>
-                    <th>Model</th>
-                    <th>R² Score</th>
-                    <th>MAE (μB)</th>
-                    <th>Status</th>
+                    <th className="bg-[rgba(17,24,39,0.8)] px-2 sm:px-4 py-2 sm:py-3 text-left text-magnet-muted font-semibold uppercase tracking-wider text-[10px] border-b border-magnet-border">Model</th>
+                    <th className="bg-[rgba(17,24,39,0.8)] px-2 sm:px-4 py-2 sm:py-3 text-left text-magnet-muted font-semibold uppercase tracking-wider text-[10px] border-b border-magnet-border">R²</th>
+                    <th className="bg-[rgba(17,24,39,0.8)] px-2 sm:px-4 py-2 sm:py-3 text-left text-magnet-muted font-semibold uppercase tracking-wider text-[10px] border-b border-magnet-border">MAE</th>
+                    <th className="bg-[rgba(17,24,39,0.8)] px-2 sm:px-4 py-2 sm:py-3 text-left text-magnet-muted font-semibold uppercase tracking-wider text-[10px] border-b border-magnet-border">Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="font-mono text-white font-semibold">RF v2 (This App)</td>
-                    <td className="font-mono">0.8903</td>
-                    <td className="font-mono">2.36</td>
-                    <td>
-                      <span className="text-[10px] font-bold text-magnet-green bg-magnet-green/10 px-2 py-0.5 rounded border border-magnet-green/20">
+                  <tr className="hover:bg-[rgba(0,212,255,0.03)]">
+                    <td className="font-mono text-white font-semibold px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">RF v2 (App)</td>
+                    <td className="font-mono px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">0.8903</td>
+                    <td className="font-mono px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">2.36</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)]">
+                      <span className="text-[9px] sm:text-[10px] font-bold text-magnet-green bg-magnet-green/10 px-1.5 sm:px-2 py-0.5 rounded border border-magnet-green/20 whitespace-nowrap">
                         BEST
                       </span>
                     </td>
                   </tr>
-                  <tr>
-                    <td className="font-mono text-magnet-muted">XGBoost v2</td>
-                    <td className="font-mono text-magnet-muted">0.8871</td>
-                    <td className="font-mono text-magnet-muted">2.68</td>
-                    <td className="text-magnet-muted">-</td>
+                  <tr className="hover:bg-[rgba(0,212,255,0.03)]">
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">XGBoost v2</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">0.8871</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">2.68</td>
+                    <td className="text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">-</td>
                   </tr>
-                  <tr>
-                    <td className="font-mono text-magnet-muted">RF Fair (base)</td>
-                    <td className="font-mono text-magnet-muted">0.8817</td>
-                    <td className="font-mono text-magnet-muted">2.49</td>
-                    <td className="text-magnet-muted">-</td>
+                  <tr className="hover:bg-[rgba(0,212,255,0.03)]">
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">RF Fair</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">0.8817</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">2.49</td>
+                    <td className="text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 border-b border-[rgba(30,58,95,0.3)] text-[11px] sm:text-[13px]">-</td>
                   </tr>
-                  <tr>
-                    <td className="font-mono text-magnet-muted">GradientBoost</td>
-                    <td className="font-mono text-magnet-muted">0.8646</td>
-                    <td className="font-mono text-magnet-muted">3.04</td>
-                    <td className="text-magnet-muted">-</td>
+                  <tr className="hover:bg-[rgba(0,212,255,0.03)]">
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 text-[11px] sm:text-[13px]">GradBoost</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 text-[11px] sm:text-[13px]">0.8646</td>
+                    <td className="font-mono text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 text-[11px] sm:text-[13px]">3.04</td>
+                    <td className="text-magnet-muted px-2 sm:px-4 py-2 sm:py-3 text-[11px] sm:text-[13px]">-</td>
                   </tr>
                 </tbody>
               </table>
@@ -237,16 +237,16 @@ export default function ExplorePage() {
         </div>
 
         {/* Chart 4: Feature Importance */}
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-2xl p-4 sm:p-6">
           <h2 className="text-base font-bold text-white mb-4">
             Feature Importance (Relative Weight)
           </h2>
-          <div className="h-48 sm:h-64">
+          <div className="h-72 sm:h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={FEATURE_IMPORTANCE} layout="vertical">
+              <BarChart data={FEATURE_IMPORTANCE} layout="vertical" margin={{ top: 0, right: 8, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                <XAxis type="number" stroke="#64748b" style={{ fontSize: 11 }} />
-                <YAxis dataKey="name" type="category" stroke="#64748b" style={{ fontSize: 10 }} width={80} />
+                <XAxis type="number" stroke="#64748b" style={{ fontSize: 10 }} />
+                <YAxis dataKey="name" type="category" stroke="#64748b" style={{ fontSize: 9 }} width={110} tick={{ fontSize: 9 }} />
                 <Tooltip
                   contentStyle={{ backgroundColor: '#111827', borderColor: '#1e3a5f', borderRadius: 8 }}
                   labelStyle={{ color: '#ffffff', fontWeight: 'bold' }}

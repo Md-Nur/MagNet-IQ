@@ -156,7 +156,7 @@ export default function Home() {
           <div className="glass gradient-border rounded-xl p-4 sm:p-6 text-center">
             <Database className="mx-auto h-5 w-5 sm:h-6 sm:w-6 text-magnet-blue mb-2" />
             <span className="block text-xl sm:text-2xl lg:text-3xl font-bold font-mono text-white">
-              {mounted ? displayStats.total_materials.toLocaleString() : '28,472'}
+              {mounted ? displayStats.total_materials.toLocaleString() : '52,205'}
             </span>
             <span className="text-[10px] sm:text-xs text-magnet-muted uppercase tracking-wider font-semibold">Total Materials</span>
           </div>
