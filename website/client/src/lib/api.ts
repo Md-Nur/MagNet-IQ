@@ -14,6 +14,7 @@ export async function predictMaterial(data: PredictInput): Promise<PredictResult
 
 export async function getRecommendations(params: {
   elements: string
+  element_match_mode?: 'all' | 'any'
   crystal_system?: string
   max_stability?: number
   rare_earth_free?: boolean

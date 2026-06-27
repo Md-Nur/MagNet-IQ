@@ -9,6 +9,7 @@ import { Filter, Download, Zap, Sparkles } from 'lucide-react'
 
 export default function RecommendPage() {
   const [selectedElements, setSelectedElements] = useState<string[]>(['Fe'])
+  const [matchMode, setMatchMode] = useState<'all' | 'any'>('all')
   const [crystalSystem, setCrystalSystem] = useState<string>('all')
   const [maxStability, setMaxStability] = useState<number>(0.1)
   const [sortParam, setSortParam] = useState<string>('score')
@@ -37,6 +38,7 @@ export default function RecommendPage() {
     try {
       const res = await getRecommendations({
         elements: selectedElements.join(','),
+        element_match_mode: matchMode,
         crystal_system: crystalSystem,
         max_stability: maxStability,
         rare_earth_free: rareEarthFree,
@@ -106,8 +108,37 @@ export default function RecommendPage() {
             <label className="block text-xs font-semibold text-magnet-muted uppercase mb-1">
               Elements
             </label>
-            <p className="text-[11px] text-magnet-muted mb-3">
-              Materials must contain ALL selected elements
+            
+            {/* Match Mode Segmented Selector */}
+            <div className="flex bg-magnet-surface/80 border border-magnet-border/60 rounded-lg p-0.5 mb-2.5 text-xs">
+              <button
+                type="button"
+                onClick={() => setMatchMode('all')}
+                className={`flex-1 text-center py-1.5 rounded-md font-semibold cursor-pointer transition-all ${
+                  matchMode === 'all'
+                    ? 'bg-magnet-blue text-[#0a0e1a] font-bold shadow-sm'
+                    : 'text-magnet-muted hover:text-white'
+                }`}
+              >
+                Match All (AND)
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatchMode('any')}
+                className={`flex-1 text-center py-1.5 rounded-md font-semibold cursor-pointer transition-all ${
+                  matchMode === 'any'
+                    ? 'bg-magnet-blue text-[#0a0e1a] font-bold shadow-sm'
+                    : 'text-magnet-muted hover:text-white'
+                }`}
+              >
+                Match Any (OR)
+              </button>
+            </div>
+
+            <p className="text-[11px] text-magnet-muted mb-3 leading-normal">
+              {matchMode === 'all'
+                ? 'Materials must contain ALL selected elements'
+                : 'Materials can contain ANY of the selected elements'}
             </p>
             <ElementPills
               selected={selectedElements}
@@ -149,10 +180,10 @@ export default function RecommendPage() {
                 onChange={(e) => setMaxStability(Number(e.target.value))}
                 className="input-dark"
               >
-                <option value="0.00">Perfectly Stable (0.00 eV/atom)</option>
+                <option value="0">Perfectly Stable (0.00 eV/atom)</option>
                 <option value="0.05">High Stability (≤ 0.05 eV/atom)</option>
-                <option value="0.10">Good Stability (≤ 0.10 eV/atom)</option>
-                <option value="1.00">Unrestricted (1.00 eV/atom)</option>
+                <option value="0.1">Good Stability (≤ 0.10 eV/atom)</option>
+                <option value="1">Unrestricted (1.00 eV/atom)</option>
               </select>
             </div>
 
@@ -345,7 +376,9 @@ export default function RecommendPage() {
               </h3>
               <p className="text-xs text-magnet-muted max-w-sm mt-1">
                 {hasSearched
-                  ? 'No materials found containing all selected elements. Try selecting fewer elements or relaxing other filters.'
+                  ? matchMode === 'all'
+                    ? 'No materials found containing all selected elements. Try selecting fewer elements, changing match mode to ANY, or relaxing other filters.'
+                    : 'No materials found containing any of the selected elements. Try relaxing other filters.'
                   : 'Select target constituent elements and click Find Materials to begin screening.'}
               </p>
             </div>
