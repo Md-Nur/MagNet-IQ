@@ -26,3 +26,4 @@ nosetests.xml
 coverage.xml
 *.coverage
 models/magnet_model_rf_v2.pkl
+*.git/
