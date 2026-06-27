@@ -308,13 +308,11 @@ This project is licensed under the MIT License.
 - [Materials Project](https://materialsproject.org) for the open DFT database and API
 - University of Rajshahi, Department of EEE, for academic supervision
 
-মূল পার্থক্য:
+## Next Changes
 
-| আপনার MagNet-IQ | স্যারের Roadmap |
+| Current MagNet-IQ | Next Roadmap |
 |----------------|----------------|
-| Materials Project DFT data | Experimental + DFT দুটোই |
-| Magnetization predict | (BH)max, Coercivity, Tc, Remanence — সব |
+| Materials Project DFT data | Experimental + DFT Both |
+| Magnetization predict | (BH)max, Coercivity, Tc, Remanence - all |
 | 52,000+ general FM materials | Specific RE-Free systems: FeNi, MnAl, MnBi, Fe16N2 |
 | Random Forest only | XGBoost, CatBoost, LightGBM, GPR, NN compare |
-
-স্যার চাচ্ছেন আপনি **targeted, multi-property prediction** করুন নির্দিষ্ট RE-Free material family-তে। এটা অনেক বেশি thesis-worthy কাজ।
