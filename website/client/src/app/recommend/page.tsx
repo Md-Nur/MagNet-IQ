@@ -103,6 +103,12 @@ export default function RecommendPage() {
 
           {/* Element Pills */}
           <div>
+            <label className="block text-xs font-semibold text-magnet-muted uppercase mb-1">
+              Elements
+            </label>
+            <p className="text-[11px] text-magnet-muted mb-3">
+              Materials must contain ALL selected elements
+            </p>
             <ElementPills
               selected={selectedElements}
               onChange={setSelectedElements}
@@ -339,7 +345,7 @@ export default function RecommendPage() {
               </h3>
               <p className="text-xs text-magnet-muted max-w-sm mt-1">
                 {hasSearched
-                  ? 'Try selecting different elements or relaxing the thermodynamic stability limits.'
+                  ? 'No materials found containing all selected elements. Try selecting fewer elements or relaxing other filters.'
                   : 'Select target constituent elements and click Find Materials to begin screening.'}
               </p>
             </div>
