@@ -56,7 +56,7 @@ export default function Home() {
 
   // Static Fallback values if API is loading or down
   const displayStats = stats || {
-    total_materials: 28472,
+    total_materials: 52205,
     crystal_systems: {},
     top_elements: {},
     magnetization_stats: { mean: 68.42, max: 843.5, min: 0.1, std: 45.2 },
