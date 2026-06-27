@@ -122,7 +122,7 @@ export default function AboutPage() {
         {/* Developer & RU Info */}
         <section className="glass rounded-2xl p-6 md:p-8 space-y-4">
           <h2 className="text-xl font-bold text-white">Developer Profile</h2>
-          <div className="flex flex-col sm:flex-row gap-6 items-start">
+          <div className="flex flex-col sm:flex-row gap-6 md:items-center items-start">
             <Image
               src="/pic.jpeg"
               alt="Developer Profile Picture"
@@ -131,7 +131,8 @@ export default function AboutPage() {
               className="rounded-full"
             />
             <div>
-              <h3 className="font-bold text-lg text-white">
+              <h2 className="font-bold text-lg text-white">Md. Nure Alam Siddiquee</h2>
+              <h3 className="font-bold text-md text-white">
                 Electrical & Electronic Engineering (EEE)
               </h3>
               <p className="text-xs text-magnet-muted">
