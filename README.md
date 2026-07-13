@@ -348,21 +348,6 @@ This project is licensed under the MIT License.
 
 ---
 
-## সমস্যাটা কী?
-
-```python
-experimental = pd.DataFrame({
-    "formula":    ["FeNi","MnAl","MnBi","BaFe12O19"...],
-    "Tc_K":       [823,   650,   630,   723...],  # ← আমি দিয়েছি
-    "Ms_T":       [1.59,  0.75,  0.78,  0.48...], # ← আমি দিয়েছি
-    ...
-})
-```
-
-এগুলো আমার দেওয়া approximate values — thesis-এ এটা ব্যবহার করা যাবে না। **আপনাকে নিজে verified sources থেকে collect করতে হবে।**
-
----
-
 ## আপনার আসল কাজ এখন
 
 প্রতিটা material-এর জন্য এই properties গুলো paper বা database থেকে খুঁজে বের করুন:
