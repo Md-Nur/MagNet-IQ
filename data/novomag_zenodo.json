@@ -1,0 +1,321 @@
+{
+  "access": {
+    "embargo": {
+      "active": false,
+      "reason": null
+    },
+    "files": "public",
+    "record": "public",
+    "status": "open"
+  },
+  "created": "2025-10-21T19:17:02.126485+00:00",
+  "custom_fields": {},
+  "deletion_status": {
+    "is_deleted": false,
+    "status": "P"
+  },
+  "files": {
+    "count": 1,
+    "enabled": true,
+    "entries": {
+      "magdb.json": {
+        "access": {
+          "hidden": false
+        },
+        "checksum": "md5:1cc9f28ccf77be0869b2a5a7e614d7ec",
+        "ext": "json",
+        "id": "fa3cd47c-eda1-4299-bd23-4f0c2c002202",
+        "key": "magdb.json",
+        "links": {
+          "content": "https://zenodo.org/api/records/17399362/files/magdb.json/content",
+          "self": "https://zenodo.org/api/records/17399362/files/magdb.json"
+        },
+        "metadata": {},
+        "mimetype": "application/json",
+        "size": 25704157,
+        "storage_class": "L"
+      }
+    },
+    "order": [],
+    "total_bytes": 25704157
+  },
+  "id": "17399362",
+  "is_draft": false,
+  "is_published": true,
+  "links": {
+    "access": "https://zenodo.org/api/records/17399362/access",
+    "access_grants": "https://zenodo.org/api/records/17399362/access/grants",
+    "access_links": "https://zenodo.org/api/records/17399362/access/links",
+    "access_request": "https://zenodo.org/api/records/17399362/access/request",
+    "access_users": "https://zenodo.org/api/records/17399362/access/users",
+    "archive": "https://zenodo.org/api/records/17399362/files-archive",
+    "archive_media": "https://zenodo.org/api/records/17399362/media-files-archive",
+    "communities": "https://zenodo.org/api/records/17399362/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/17399362/communities-suggestions",
+    "doi": "https://doi.org/10.5281/zenodo.17399362",
+    "draft": "https://zenodo.org/api/records/17399362/draft",
+    "file_modification": "https://zenodo.org/api/records/17399362/file-modification",
+    "files": "https://zenodo.org/api/records/17399362/files",
+    "latest": "https://zenodo.org/api/records/17399362/versions/latest",
+    "latest_html": "https://zenodo.org/records/17399362/latest",
+    "media_files": "https://zenodo.org/api/records/17399362/media-files",
+    "parent": "https://zenodo.org/api/records/17399361",
+    "parent_doi": "https://doi.org/10.5281/zenodo.17399361",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17399361",
+    "parent_html": "https://zenodo.org/records/17399361",
+    "preview_html": "https://zenodo.org/records/17399362?preview=1",
+    "quota_increase": "https://zenodo.org/api/records/17399362/quota-increase",
+    "request_deletion": "https://zenodo.org/api/records/17399362/request-deletion",
+    "requests": "https://zenodo.org/api/records/17399362/requests",
+    "reserve_doi": "https://zenodo.org/api/records/17399362/draft/pids/doi",
+    "self": "https://zenodo.org/api/records/17399362",
+    "self_doi": "https://doi.org/10.5281/zenodo.17399362",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.17399362",
+    "self_html": "https://zenodo.org/records/17399362",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:17399362/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:17399362/sequence/default",
+    "versions": "https://zenodo.org/api/records/17399362/versions"
+  },
+  "media_files": {
+    "count": 0,
+    "enabled": false,
+    "entries": {},
+    "order": [],
+    "total_bytes": 0
+  },
+  "metadata": {
+    "creators": [
+      {
+        "affiliations": [
+          {
+            "id": "041m9xr71",
+            "identifiers": [
+              {
+                "identifier": "041m9xr71",
+                "scheme": "ror"
+              },
+              {
+                "identifier": "grid.451319.b",
+                "scheme": "grid"
+              },
+              {
+                "identifier": "0000 0001 0690 157X",
+                "scheme": "isni"
+              }
+            ],
+            "name": "Ames National Laboratory"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Xia",
+          "given_name": "Weiyi",
+          "identifiers": [
+            {
+              "identifier": "0000-0001-7669-6305",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Xia, Weiyi",
+          "type": "personal"
+        },
+        "role": {
+          "id": "contactperson",
+          "title": {
+            "de": "Kontaktperson",
+            "en": "Contact person"
+          }
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "041m9xr71",
+            "identifiers": [
+              {
+                "identifier": "041m9xr71",
+                "scheme": "ror"
+              },
+              {
+                "identifier": "grid.451319.b",
+                "scheme": "grid"
+              },
+              {
+                "identifier": "0000 0001 0690 157X",
+                "scheme": "isni"
+              }
+            ],
+            "name": "Ames National Laboratory"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Wang",
+          "given_name": "Cai-Zhuang",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0269-4785",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Wang, Cai-Zhuang",
+          "type": "personal"
+        }
+      },
+      {
+        "affiliations": [
+          {
+            "id": "00hj54h04",
+            "identifiers": [
+              {
+                "identifier": "00hj54h04",
+                "scheme": "ror"
+              },
+              {
+                "identifier": "grid.89336.37",
+                "scheme": "grid"
+              },
+              {
+                "identifier": "0000 0004 1936 9924",
+                "scheme": "isni"
+              }
+            ],
+            "name": "The University of Texas at Austin"
+          }
+        ],
+        "person_or_org": {
+          "family_name": "Chelikowsky",
+          "given_name": "James",
+          "identifiers": [
+            {
+              "identifier": "0000-0003-2181-3070",
+              "scheme": "orcid"
+            }
+          ],
+          "name": "Chelikowsky, James",
+          "type": "personal"
+        }
+      }
+    ],
+    "description": "<h4><strong>Database statistics:</strong></h4>\n<h5>A total of 3,826 entries, including 300+ Fe-based&nbsp;<em>rare-earth-free</em> magnets discovered through our adaptive genetic algorithm&nbsp;(AGA) searches, are registered in our database.&nbsp;</h5>\n<div>\n<div><strong>Footnotes:</strong>\n<ol>\n<li><strong>Formation energy:</strong><br>We perform&nbsp;<a href=\"https://magmat.herokuapp.com/about#DFT\">DFT calculations</a>&nbsp;to calculate the total enegies of all the structures. The formation energy is computed with respect to a linear combination of the total energies of reference elemental phases. When the formation energies are plotted as a function of chemical composition, a set of stable compounds forms a&nbsp;<em>convex hull</em>, which represents a boundary (theoretical lower limit) in a compositional phase diagram. Metastable compounds lie above the hull, and the energy relative to the hull (<em>distance</em>&nbsp;to the hull) is a useful quantity to examine the metastability of a new compound. The lower the formation energy above the convex hull, the more likely it is for the material to exist.</li>\n<li><strong>Magnetic anisotropy constants:</strong><br>Magnetic anisotropy constant, K<sup>a-c</sup>, is defined as K<sup>a-c</sup>&nbsp;= E<sub>a</sub>-E<sub>c</sub>, where E<sub>a</sub>&nbsp;and E<sub>c</sub>&nbsp;are the total energies per volume for the magnetization oriented along the crystallographic a and c axes, respectively. Similarly, K<sup>b-c</sup>&nbsp;and K<sup>b-a</sup>&nbsp;are defined as K<sup>b-c</sup>&nbsp;= E<sub>b</sub>-E<sub>c</sub>&nbsp;and K<sup>b-a</sup>&nbsp;= E<sub>b</sub>-E<sub>a</sub>, respectively. For cubic crystal systems, magnetic anisotropy constant is calculated as K<sup>d-a</sup>&nbsp;= E<sub>d</sub>-E<sub>a</sub>, where E<sub>d</sub>&nbsp;is the total energy per volume for the magnetization oriented along the body-diagonal direction of the unit cell.</li>\n</ol>\n</div>\n\n\n<div><strong>Collaborative PIs:</strong>\n<ul>\n<li>James R. Chelikowsky (<a href=\"https://www.utexas.edu/\">University of Texas at Austin</a>)</li>\n<li>Kai-Ming Ho and Cai-Zhuang Wang (<a href=\"https://www.iastate.edu/\">Iowa State University</a>)</li>\n<li>David Sellmyer and XiaoShan Xu (<a href=\"https://www.unl.edu/\">University of Nebraska&ndash;Lincoln</a>)</li>\n</ul>\n</div>\n</div>\n\n\n<div>You can download and use the data of this database for your scientific work, provided that you express proper acknowledgements:<br>\n<ul>\n<li>M. Sakurai, R. Wang, T. Liao, C. Zhang, H. Sun, Y. Sun, H. Wang, X. Zhao, S. Wang, B. Balasubramanian, X. Xu, D. J. Sellmyer, V. Antropov, J. Zhang, C.-Z. Wang, K.-M. Ho, J. R. Chelikowsky,<br>\"Discovering rare-earth-free magnetic materials through the development of a database,\" [selected as&nbsp;<a href=\"https://journals.aps.org/prmaterials/issues/4/11\">Editors' Suggestion</a>]<br><a href=\"https://doi.org/10.1103/PhysRevMaterials.4.114408\">Phys. Rev. Materials&nbsp;<strong>4</strong>, 114408 (2020)</a>.<br>DOI: 10.1103/PhysRevMaterials.4.114408</li>\n<li>B. Balasubramanian, M. Sakurai, C.-Z. Wang, X. Xu, K.-M. Ho, J. R. Chelikowsky, and D. J. Sellmyer,<br>\"Synergistic computational and experimental discovery of novel magnetic materials,\" [Review article]<br><a href=\"https://doi.org/10.1039/D0ME00050G\">Mol. Syst. Des. Eng.,&nbsp;<strong>5</strong>, 1098-1117 (2020)</a>.<br>DOI: 10.1039/D0ME00050G</li>\n<li>Portal page:&nbsp;<a href=\"https://www.novomag.physics.iastate.edu/structure-database\">https://www.novomag.physics.iastate.edu/structure-database</a></li>\n</ul>\n</div>",
+    "publication_date": "2025-10-21",
+    "publisher": "Zenodo",
+    "related_identifiers": [
+      {
+        "identifier": "10.1103/PhysRevMaterials.4.114408",
+        "relation_type": {
+          "id": "isdescribedby",
+          "title": {
+            "de": "Wird beschrieben von",
+            "en": "Is described by"
+          }
+        },
+        "resource_type": {
+          "id": "publication-article",
+          "title": {
+            "de": "Zeitschriftenartikel",
+            "en": "Journal article"
+          }
+        },
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1039/D0ME00050G",
+        "relation_type": {
+          "id": "isdescribedby",
+          "title": {
+            "de": "Wird beschrieben von",
+            "en": "Is described by"
+          }
+        },
+        "resource_type": {
+          "id": "publication-article",
+          "title": {
+            "de": "Zeitschriftenartikel",
+            "en": "Journal article"
+          }
+        },
+        "scheme": "doi"
+      }
+    ],
+    "resource_type": {
+      "id": "dataset",
+      "title": {
+        "de": "Datensatz",
+        "en": "Dataset"
+      }
+    },
+    "rights": [
+      {
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "id": "cc-by-4.0",
+        "props": {
+          "scheme": "spdx",
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode"
+        },
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        }
+      }
+    ],
+    "title": "Novomag magnetic materials database"
+  },
+  "parent": {
+    "access": {
+      "owned_by": {
+        "user": "1416631"
+      },
+      "settings": {
+        "accept_conditions_text": null,
+        "allow_guest_requests": false,
+        "allow_user_requests": false,
+        "secret_link_expiration": 0
+      }
+    },
+    "communities": {},
+    "id": "17399361",
+    "pids": {
+      "doi": {
+        "client": "datacite",
+        "identifier": "10.5281/zenodo.17399361",
+        "provider": "datacite"
+      }
+    }
+  },
+  "pids": {
+    "doi": {
+      "client": "datacite",
+      "identifier": "10.5281/zenodo.17399362",
+      "provider": "datacite"
+    },
+    "oai": {
+      "identifier": "oai:zenodo.org:17399362",
+      "provider": "oai"
+    }
+  },
+  "revision_id": 4,
+  "stats": {
+    "all_versions": {
+      "data_volume": 4626748260.0,
+      "downloads": 180,
+      "unique_downloads": 161,
+      "unique_views": 451,
+      "views": 506
+    },
+    "this_version": {
+      "data_volume": 4626748260.0,
+      "downloads": 180,
+      "unique_downloads": 161,
+      "unique_views": 451,
+      "views": 506
+    }
+  },
+  "status": "published",
+  "swh": {},
+  "updated": "2025-10-21T19:17:02.355256+00:00",
+  "versions": {
+    "index": 1,
+    "is_latest": true
+  }
+}
